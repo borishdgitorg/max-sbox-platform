@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-VMSS-Monitoring",
+      "apiVersion": "2021-06-01",
+      "location": "eastus",
+      "identity": {
+        "PrincipalId": "99f7d1a6-775b-47cf-ac3e-9d8483b068c5",
+        "TenantId": "863ced0a-9f08-4b1d-8a07-19ea74916551",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox",
+        "NotScopes": null,
+        "DisplayName": "Enable Azure Monitor for Virtual Machine Scale Sets",
+        "Description": "Enable Azure Monitor for the Virtual Machine Scale Sets in the specified scope (Management group, Subscription or resource group). Takes Log Analytics workspace as parameter. Note: if your scale set upgradePolicy is set to Manual, you need to apply the extension to the all VMs in the set by calling upgrade on them. In CLI this would be az vmss update-instances.",
+        "EnforcementMode": "Default",
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/75714362-cae7-409e-9b99-a8e5075b7fad",
+        "Parameters": {
+          "logAnalytics_1": {
+            "value": "/subscriptions/ff0aa2c8-ab4d-4382-85a3-11dbd57c641e/resourceGroups/max-sbox-mgmt/providers/Microsoft.OperationalInsights/workspaces/max-sbox-law"
+          }
+        },
+        "NonComplianceMessages": null
+      }
+    }
+  ],
+  "outputs": {}
+}

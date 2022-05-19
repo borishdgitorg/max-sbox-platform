@@ -1,0 +1,103 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Management/managementGroups",
+      "name": "max-sbox",
+      "apiVersion": "2021-04-01",
+      "scope": "/",
+      "properties": {
+        "displayName": "max-sbox",
+        "details": {
+          "parent": {
+            "id": "/providers/Microsoft.Management/managementGroups/863ced0a-9f08-4b1d-8a07-19ea74916551"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-10-01",
+      "name": "AzOps-microsoft.management_managementgroups-nested",
+      "location": "[deployment().location]",
+      "properties": {
+        "mode": "Incremental",
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "resources": [
+            {
+              "type": "Microsoft.Management/managementGroups",
+              "apiVersion": "2020-05-01",
+              "name": "max-sbox-platform",
+              "scope": "/",
+              "properties": {
+                "displayName": "max-sbox-platform",
+                "details": {
+                  "parent": {
+                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox"
+                  }
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Management/managementGroups",
+              "apiVersion": "2020-05-01",
+              "name": "max-sbox-sandboxes",
+              "scope": "/",
+              "properties": {
+                "displayName": "max-sbox-sandboxes",
+                "details": {
+                  "parent": {
+                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox"
+                  }
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Management/managementGroups",
+              "apiVersion": "2020-05-01",
+              "name": "max-sbox-landingzones",
+              "scope": "/",
+              "properties": {
+                "displayName": "max-sbox-landingzones",
+                "details": {
+                  "parent": {
+                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox"
+                  }
+                }
+              }
+            },
+            {
+              "type": "Microsoft.Management/managementGroups",
+              "apiVersion": "2020-05-01",
+              "name": "max-sbox-decommissioned",
+              "scope": "/",
+              "properties": {
+                "displayName": "max-sbox-decommissioned",
+                "details": {
+                  "parent": {
+                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox"
+                  }
+                }
+              }
+            }
+          ],
+          "outputs": {}
+        }
+      },
+      "dependsOn": [
+        "/providers/Microsoft.Management/managementGroups/max-sbox"
+      ]
+    }
+  ],
+  "outputs": {}
+}
