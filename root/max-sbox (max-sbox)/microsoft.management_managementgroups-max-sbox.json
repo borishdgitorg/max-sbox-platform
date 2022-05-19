@@ -89,6 +89,12 @@
                   }
                 }
               }
+            },
+            {
+              "type": "Microsoft.Management/managementGroups/subscriptions",
+              "apiVersion": "2021-04-01",
+              "name": "max-sbox/bab9a263-0118-4dd9-88a6-c9be7a5356b7",
+              "scope": "/"
             }
           ],
           "outputs": {}
