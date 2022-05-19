@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-AzActivity-Log",
+      "apiVersion": "2021-06-01",
+      "location": "eastus",
+      "identity": {
+        "PrincipalId": "d5cdca95-c3ae-47f2-82dd-33da16ef248b",
+        "TenantId": "863ced0a-9f08-4b1d-8a07-19ea74916551",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox",
+        "NotScopes": null,
+        "DisplayName": "Configure Azure Activity logs to stream to specified Log Analytics workspace",
+        "Description": "Deploys the diagnostic settings for Azure Activity to stream subscriptions audit logs to a Log Analytics workspace to monitor subscription-level events",
+        "EnforcementMode": "Default",
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2465583e-4e78-4c15-b6be-a36cbc7c8b0f",
+        "Parameters": {
+          "logAnalytics": {
+            "value": "/subscriptions/ff0aa2c8-ab4d-4382-85a3-11dbd57c641e/resourceGroups/max-sbox-mgmt/providers/Microsoft.OperationalInsights/workspaces/max-sbox-law"
+          },
+          "logsEnabled": {
+            "value": "True"
+          }
+        },
+        "NonComplianceMessages": null
+      }
+    }
+  ],
+  "outputs": {}
+}

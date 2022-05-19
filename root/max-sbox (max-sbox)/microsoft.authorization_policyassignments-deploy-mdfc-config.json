@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-MDFC-Config",
+      "apiVersion": "2021-06-01",
+      "location": "eastus",
+      "identity": {
+        "PrincipalId": "a710ba49-e0fd-49e0-a01e-964dfa8109f3",
+        "TenantId": "863ced0a-9f08-4b1d-8a07-19ea74916551",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox",
+        "NotScopes": null,
+        "DisplayName": "Deploy Microsoft Defender for Cloud configuration",
+        "Description": "Deploy Microsoft Defender for Cloud and Security Contacts",
+        "EnforcementMode": "Default",
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/max-sbox/providers/Microsoft.Authorization/policySetDefinitions/Deploy-MDFC-Config",
+        "Parameters": {
+          "emailSecurityContact": {
+            "value": "boris@borishd.fr"
+          },
+          "logAnalytics": {
+            "value": "/subscriptions/ff0aa2c8-ab4d-4382-85a3-11dbd57c641e/resourceGroups/max-sbox-mgmt/providers/Microsoft.OperationalInsights/workspaces/max-sbox-law"
+          },
+          "ascExportResourceGroupName": {
+            "value": "max-sbox-asc-export"
+          },
+          "ascExportResourceGroupLocation": {
+            "value": "eastus"
+          },
+          "enableAscForServers": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForSql": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForAppServices": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForStorage": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForContainers": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForKeyVault": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForSqlOnVm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForArm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForDns": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForOssDb": {
+            "value": "DeployIfNotExists"
+          }
+        },
+        "NonComplianceMessages": null
+      }
+    }
+  ],
+  "outputs": {}
+}

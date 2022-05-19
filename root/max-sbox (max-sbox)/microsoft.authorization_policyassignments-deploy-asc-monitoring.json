@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "Deploy-ASC-Monitoring",
+      "apiVersion": "2021-06-01",
+      "location": "eastus",
+      "identity": {
+        "PrincipalId": "6847620a-d246-4152-b93b-452a865df25b",
+        "TenantId": "863ced0a-9f08-4b1d-8a07-19ea74916551",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox",
+        "NotScopes": null,
+        "DisplayName": "Azure Security Benchmark",
+        "Description": "Azure Security Benchmark policy initiative",
+        "EnforcementMode": "Default",
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
+        "Parameters": {
+          "identityDesignateLessThanOwnersMonitoringEffect": {
+            "value": "Disabled"
+          },
+          "useRbacRulesMonitoringEffect": {
+            "value": "Disabled"
+          },
+          "useServicePrincipalToProtectSubscriptionsMonitoringEffect": {
+            "value": "Disabled"
+          },
+          "identityEnableMFAForOwnerPermissionsMonitoringEffect": {
+            "value": "Disabled"
+          },
+          "networkWatcherShouldBeEnabledMonitoringEffect": {
+            "value": "Disabled"
+          },
+          "autoProvisioningOfTheLogAnalyticsAgentShouldBeEnabledOnYourSubscriptionMonitoringEffect": {
+            "value": "Disabled"
+          }
+        },
+        "NonComplianceMessages": null
+      }
+    }
+  ],
+  "outputs": {}
+}
