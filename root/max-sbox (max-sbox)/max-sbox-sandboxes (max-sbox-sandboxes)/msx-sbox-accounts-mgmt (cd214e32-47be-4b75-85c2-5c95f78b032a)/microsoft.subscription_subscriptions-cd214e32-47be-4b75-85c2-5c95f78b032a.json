@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Management/managementGroups/subscriptions",
+      "name": "max-sbox-sandboxes/cd214e32-47be-4b75-85c2-5c95f78b032a",
+      "apiVersion": "2021-04-01",
+      "scope": "/"
+    }
+  ],
+  "outputs": {}
+}
