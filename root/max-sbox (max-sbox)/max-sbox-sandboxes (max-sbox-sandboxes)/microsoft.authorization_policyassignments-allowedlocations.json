@@ -21,7 +21,7 @@
       },
       "properties": {
         "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox-sandboxes",
-        "NotScopes": null,
+        "NotScopes": [],
         "DisplayName": "Policy to ringfence Azure regions.",
         "Description": "Policy to ringfence Azure regions.",
         "EnforcementMode": "DoNotEnforce",
@@ -31,11 +31,12 @@
             "value": [
               "southcentralus",
               "northcentralus",
-              "eastus"
+              "eastus",
+              "eastus2"
             ]
           }
         },
-        "NonComplianceMessages": null
+        "NonComplianceMessages": []
       }
     }
   ],
