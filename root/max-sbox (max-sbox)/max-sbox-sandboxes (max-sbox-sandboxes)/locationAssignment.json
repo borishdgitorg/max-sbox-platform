@@ -32,7 +32,8 @@
             "type": "array",
             "defaultValue": [
                 "westeurope",
-                "northeurope"
+                "northeurope",
+                "eastus"
             ]
         }
     },
