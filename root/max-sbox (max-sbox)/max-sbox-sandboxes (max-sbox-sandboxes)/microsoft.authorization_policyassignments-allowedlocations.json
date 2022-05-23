@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "AllowedLocations",
+      "apiVersion": "2021-06-01",
+      "location": "southcentralus",
+      "identity": {
+        "PrincipalId": "e26e8400-293a-48f4-aa9c-8b4150bae029",
+        "TenantId": "863ced0a-9f08-4b1d-8a07-19ea74916551",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox-sandboxes",
+        "NotScopes": null,
+        "DisplayName": "Policy to ringfence Azure regions.",
+        "Description": "Policy to ringfence Azure regions.",
+        "EnforcementMode": "DoNotEnforce",
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c",
+        "Parameters": {
+          "listOfAllowedLocations": {
+            "value": [
+              "southcentralus",
+              "northcentralus"
+            ]
+          }
+        },
+        "NonComplianceMessages": null
+      }
+    }
+  ],
+  "outputs": {}
+}
