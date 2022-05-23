@@ -31,8 +31,8 @@
         "listOfAllowedLocations": {
             "type": "array",
             "defaultValue": [
-                "southcentralus",
-                "northcentralus",
+                "westeurope",
+                "northeurope",
                 "eastus"
             ]
         }
