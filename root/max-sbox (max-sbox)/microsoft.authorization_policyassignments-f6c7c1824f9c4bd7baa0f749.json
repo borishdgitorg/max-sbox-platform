@@ -11,21 +11,21 @@
   "resources": [
     {
       "type": "Microsoft.Authorization/policyAssignments",
-      "name": "Deploy-Resource-Diag",
+      "name": "f6c7c1824f9c4bd7baa0f749",
       "apiVersion": "2021-06-01",
       "location": "eastus",
       "identity": {
-        "PrincipalId": "fe4b28a6-19e8-4c05-815e-c7cec01aa16e",
+        "PrincipalId": "421bd5b0-b789-4e7a-a411-578de999c063",
         "TenantId": "863ced0a-9f08-4b1d-8a07-19ea74916551",
         "Type": "SystemAssigned"
       },
       "properties": {
         "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox",
         "NotScopes": [],
-        "DisplayName": "Deploy Diagnostic Settings to Azure Services",
-        "Description": "This policy set deploys the configurations of application Azure resources to forward diagnostic logs and metrics to an Azure Log Analytics workspace. See the list of policies of the services that are included",
+        "DisplayName": "Deploy Diagnostic Settings for Automation to Log Analytics workspace",
+        "Description": null,
         "EnforcementMode": "Default",
-        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/max-sbox/providers/Microsoft.Authorization/policySetDefinitions/Deploy-Diagnostics-LogAnalytics",
+        "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/max-sbox/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-AA",
         "Parameters": {
           "logAnalytics": {
             "value": "/subscriptions/ff0aa2c8-ab4d-4382-85a3-11dbd57c641e/resourcegroups/max-sbox-mgmt/providers/microsoft.operationalinsights/workspaces/max-sbox-law"
