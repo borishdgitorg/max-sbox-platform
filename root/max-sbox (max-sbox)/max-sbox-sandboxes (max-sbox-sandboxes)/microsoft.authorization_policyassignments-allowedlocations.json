@@ -29,8 +29,8 @@
         "Parameters": {
           "listOfAllowedLocations": {
             "value": [
-              "westeurope",
-              "northeurope"
+              "southcentralus",
+              "northcentralus"
             ]
           }
         },
