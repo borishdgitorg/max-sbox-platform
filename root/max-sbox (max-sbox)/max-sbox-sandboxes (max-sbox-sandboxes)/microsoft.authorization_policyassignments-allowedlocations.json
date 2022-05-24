@@ -31,7 +31,8 @@
             "value": [
               "southcentralus",
               "northcentralus",
-              "eastus"
+              "eastus",
+              "centralus"
             ]
           }
         },
