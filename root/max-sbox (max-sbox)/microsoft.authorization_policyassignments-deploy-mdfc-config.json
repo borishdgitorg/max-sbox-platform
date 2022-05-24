@@ -21,7 +21,7 @@
       },
       "properties": {
         "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox",
-        "NotScopes": null,
+        "NotScopes": [],
         "DisplayName": "Deploy Microsoft Defender for Cloud configuration",
         "Description": "Deploy Microsoft Defender for Cloud and Security Contacts",
         "EnforcementMode": "Default",
@@ -31,7 +31,7 @@
             "value": "boris@borishd.fr"
           },
           "logAnalytics": {
-            "value": "/subscriptions/ff0aa2c8-ab4d-4382-85a3-11dbd57c641e/resourceGroups/max-sbox-mgmt/providers/Microsoft.OperationalInsights/workspaces/max-sbox-law"
+            "value": "/subscriptions/ff0aa2c8-ab4d-4382-85a3-11dbd57c641e/resourcegroups/max-sbox-mgmt/providers/microsoft.operationalinsights/workspaces/max-sbox-law"
           },
           "ascExportResourceGroupName": {
             "value": "max-sbox-asc-export"
@@ -39,13 +39,25 @@
           "ascExportResourceGroupLocation": {
             "value": "eastus"
           },
-          "enableAscForServers": {
-            "value": "DeployIfNotExists"
-          },
           "enableAscForSql": {
             "value": "DeployIfNotExists"
           },
+          "enableAscForSqlOnVm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForDns": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForArm": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForOssDb": {
+            "value": "DeployIfNotExists"
+          },
           "enableAscForAppServices": {
+            "value": "DeployIfNotExists"
+          },
+          "enableAscForKeyVault": {
             "value": "DeployIfNotExists"
           },
           "enableAscForStorage": {
@@ -54,23 +66,11 @@
           "enableAscForContainers": {
             "value": "DeployIfNotExists"
           },
-          "enableAscForKeyVault": {
-            "value": "DeployIfNotExists"
-          },
-          "enableAscForSqlOnVm": {
-            "value": "DeployIfNotExists"
-          },
-          "enableAscForArm": {
-            "value": "DeployIfNotExists"
-          },
-          "enableAscForDns": {
-            "value": "DeployIfNotExists"
-          },
-          "enableAscForOssDb": {
+          "enableAscForServers": {
             "value": "DeployIfNotExists"
           }
         },
-        "NonComplianceMessages": null
+        "NonComplianceMessages": []
       }
     }
   ],
