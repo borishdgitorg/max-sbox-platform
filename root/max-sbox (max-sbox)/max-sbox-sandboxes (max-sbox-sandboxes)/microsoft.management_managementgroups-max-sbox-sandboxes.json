@@ -45,7 +45,7 @@
         }
       },
       "dependsOn": [
-        "/providers/Microsoft.Management/managementGroups/max-sbox-sandboxes"
+        "Microsoft.Management/managementGroups/max-sbox-sandboxes"
       ]
     }
   ],

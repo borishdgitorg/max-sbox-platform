@@ -33,41 +33,12 @@
         "template": {
           "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
           "contentVersion": "1.0.0.0",
-          "resources": [
-            {
-              "type": "Microsoft.Management/managementGroups",
-              "apiVersion": "2020-05-01",
-              "name": "max-sbox-online",
-              "scope": "/",
-              "properties": {
-                "displayName": "max-sbox-online",
-                "details": {
-                  "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox-landingzones"
-                  }
-                }
-              }
-            },
-            {
-              "type": "Microsoft.Management/managementGroups",
-              "apiVersion": "2020-05-01",
-              "name": "max-sbox-corp",
-              "scope": "/",
-              "properties": {
-                "displayName": "max-sbox-corp",
-                "details": {
-                  "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox-landingzones"
-                  }
-                }
-              }
-            }
-          ],
+          "resources": [],
           "outputs": {}
         }
       },
       "dependsOn": [
-        "/providers/Microsoft.Management/managementGroups/max-sbox-landingzones"
+        "Microsoft.Management/managementGroups/max-sbox-landingzones"
       ]
     }
   ],

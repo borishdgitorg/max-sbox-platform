@@ -33,55 +33,12 @@
         "template": {
           "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
           "contentVersion": "1.0.0.0",
-          "resources": [
-            {
-              "type": "Microsoft.Management/managementGroups",
-              "apiVersion": "2020-05-01",
-              "name": "max-sbox-identity",
-              "scope": "/",
-              "properties": {
-                "displayName": "max-sbox-identity",
-                "details": {
-                  "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox-platform"
-                  }
-                }
-              }
-            },
-            {
-              "type": "Microsoft.Management/managementGroups",
-              "apiVersion": "2020-05-01",
-              "name": "max-sbox-connectivity",
-              "scope": "/",
-              "properties": {
-                "displayName": "max-sbox-connectivity",
-                "details": {
-                  "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox-platform"
-                  }
-                }
-              }
-            },
-            {
-              "type": "Microsoft.Management/managementGroups",
-              "apiVersion": "2020-05-01",
-              "name": "max-sbox-management",
-              "scope": "/",
-              "properties": {
-                "displayName": "max-sbox-management",
-                "details": {
-                  "parent": {
-                    "id": "/providers/Microsoft.Management/managementGroups/max-sbox-platform"
-                  }
-                }
-              }
-            }
-          ],
+          "resources": [],
           "outputs": {}
         }
       },
       "dependsOn": [
-        "/providers/Microsoft.Management/managementGroups/max-sbox-platform"
+        "Microsoft.Management/managementGroups/max-sbox-platform"
       ]
     }
   ],
