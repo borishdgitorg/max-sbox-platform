@@ -38,7 +38,7 @@
         }
       },
       "dependsOn": [
-        "/providers/Microsoft.Management/managementGroups/max-sbox-corp"
+        "Microsoft.Management/managementGroups/max-sbox-corp"
       ]
     }
   ],
