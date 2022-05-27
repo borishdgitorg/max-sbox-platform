@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyAssignments",
+      "name": "d4cb052dc64d42089d4ef3fb",
+      "apiVersion": "2021-06-01",
+      "location": "eastus",
+      "identity": {
+        "PrincipalId": "462c7571-72e2-48f4-84cf-25bb812d8f49",
+        "TenantId": "863ced0a-9f08-4b1d-8a07-19ea74916551",
+        "Type": "SystemAssigned"
+      },
+      "properties": {
+        "Scope": "/providers/Microsoft.Management/managementGroups/max-sbox-sandboxes",
+        "NotScopes": [],
+        "DisplayName": "NIST SP 800-53 Rev. 5",
+        "Description": null,
+        "EnforcementMode": "Default",
+        "PolicyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f",
+        "Parameters": {},
+        "NonComplianceMessages": []
+      }
+    }
+  ],
+  "outputs": {}
+}
